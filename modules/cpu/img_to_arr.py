@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 
-from modules.img_preprocessing import img_preprocessing
+from modules.cpu.img_preprocessing import img_preprocessing
 
 
 def img_to_arr(img_path, t_width, t_height):

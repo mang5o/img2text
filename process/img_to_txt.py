@@ -1,10 +1,10 @@
-from modules.calc_good_txt import calc_good_txt
-from modules.compare_arr import text_compare
-from modules.concat_img import concat_img
-from modules.concat_text import concat_txt
-from modules.font_size_check import font_size_check
-from modules.img_to_arr import img_to_arr
-from modules.txt_to_arr import txt_to_arr
+from modules.cpu.calc_good_txt import calc_good_txt
+from modules.cpu.compare_arr import text_compare
+from modules.cpu.concat_img import concat_img
+from modules.cpu.concat_text import concat_txt
+from modules.cpu.font_size_check import font_size_check
+from modules.cpu.img_to_arr import img_to_arr
+from modules.cpu.txt_to_arr import txt_to_arr
 import time
 
 
@@ -34,4 +34,4 @@ def img_to_txt(font, font_size, img, txt_vertical_interval=0):
         print(i)
 
 
-img_to_txt("../ttf_font/Ubuntu-Regular.ttf", 6, "../input/tb.jpeg", 4)
+img_to_txt("../ttf_font/JetBrainsMono-Light.ttf", 10, "../input/tbb.jpg", 4)

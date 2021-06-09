@@ -129,9 +129,13 @@ dmypy.json
 .pyre/
 
 # ttf file
-.ttf
+*.ttf
 
-#img file
-.jpeg
-.png
-.jpg
+# img file
+*.jpeg
+*.png
+*.jpg
+
+
+# pycharm
+.idea
