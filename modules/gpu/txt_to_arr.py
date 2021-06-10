@@ -1,9 +1,9 @@
-import numpy as np
+import cupy as cp
 from PIL import Image, ImageDraw, ImageFont
 from config.config import get_available_letters
 
 
-def txt_to_arr(width, height, font, font_size, invert=False):
+def txt_to_arr_gpu(width, height, font, font_size, invert=False):
     letters = get_available_letters()
     if invert:
         t_color = 0
@@ -21,5 +21,5 @@ def txt_to_arr(width, height, font, font_size, invert=False):
         h_par = (height - h) / 2
         d.text((w_par, h_par), letters[i], font=fnt, fill=t_color)
         all_text.paste(let_img, (width*i, 0))
-    txt_arr = np.asarray(all_text)
+    txt_arr = cp.asarray(all_text)
     return len(letters), txt_arr
