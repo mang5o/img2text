@@ -1,5 +1,4 @@
 from PIL import ImageFont
-
 from config.config import get_available_letters
 
 

@@ -1,16 +1,13 @@
 import numpy as np
 from PIL import Image
-
 from modules.cpu.img_preprocessing import img_preprocessing
 
 
 def img_to_arr(img_path, t_width, t_height):
-    # 아래로 긴 img_arr 만들어줌
     img = Image.open(img_path).convert('L')
     np_img = np.array(img)
     np_img = img_preprocessing(np_img)
     img = Image.fromarray(np_img)
-    img.save("../output/output.png")
     w = img.width
     h = img.height
     w_mod = w % t_width

@@ -1,11 +1,10 @@
-import cupy as cp
 import numpy as np
 from PIL import Image
 from modules.cpu.img_preprocessing import img_preprocessing
 
 
-def img_to_arr_gpu(img_path, t_width, t_height):
-    img = Image.open(img_path).convert('L')
+def frame_to_arr(img_frame, t_width, t_height):
+    img = Image.fromarray(img_frame)
     np_img = np.array(img)
     np_img = img_preprocessing(np_img)
     img = Image.fromarray(np_img)
@@ -24,11 +23,11 @@ def img_to_arr_gpu(img_path, t_width, t_height):
         for y in range(h_grid_cnt):
             tmp_img = img.crop((x * t_width, y * t_height, (x + 1) * t_width, (y + 1) * t_height))
             if len(tmp_arr) == 0:
-                tmp_arr = cp.asarray(tmp_img)
+                tmp_arr = np.asarray(tmp_img)
             else:
-                tmp_arr = cp.concatenate((tmp_arr, cp.asarray(tmp_img)), axis=0)
+                tmp_arr = np.concatenate((tmp_arr, np.asarray(tmp_img)), axis=0)
         if len(over_arr) == 0:
-            over_arr = cp.asarray(tmp_arr)
+            over_arr = np.asarray(tmp_arr)
         else:
-            over_arr = cp.concatenate((over_arr, cp.asarray(tmp_arr)), axis=0)
+            over_arr = np.concatenate((over_arr, np.asarray(tmp_arr)), axis=0)
     return w, h, w_grid_cnt, h_grid_cnt, over_arr

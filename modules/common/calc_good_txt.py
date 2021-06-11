@@ -1,5 +1,6 @@
 from config.config import get_available_letters
 
+
 def calc_good_txt(output_arr):
     txt_img = []
     all_letters = get_available_letters()

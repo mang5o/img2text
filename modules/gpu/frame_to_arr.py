@@ -4,8 +4,8 @@ from PIL import Image
 from modules.cpu.img_preprocessing import img_preprocessing
 
 
-def img_to_arr_gpu(img_path, t_width, t_height):
-    img = Image.open(img_path).convert('L')
+def frame_to_arr_gpu(img_frame, t_width, t_height):
+    img = Image.fromarray(img_frame)
     np_img = np.array(img)
     np_img = img_preprocessing(np_img)
     img = Image.fromarray(np_img)
