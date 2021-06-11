@@ -139,3 +139,6 @@ dmypy.json
 
 # pycharm
 .idea
+
+# output
+output
