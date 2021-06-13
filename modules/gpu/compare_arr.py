@@ -1,10 +1,8 @@
 import cupy as cp
 import numpy as np
-import time
 
 
 def text_compare_gpu(text_array, img_array, text_width, text_height, img_w, img_h):
-    start_time = time.time()
     text_array = text_array.astype(float)
     img_array = img_array.astype(float)
     ov_array = cp.subtract(text_array, img_array)
@@ -13,7 +11,6 @@ def text_compare_gpu(text_array, img_array, text_width, text_height, img_w, img_
     ov_shape = ov_array.shape
     w_grid_cnt = int(ov_shape[1] / text_width)
     h_grid_cnt = int(ov_shape[0] / text_height)
-    start_time = time.time()
     for y_grid in range(h_grid_cnt):
         tmp_x_line = []
         for x_grid in range(w_grid_cnt):

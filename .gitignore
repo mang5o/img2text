@@ -131,10 +131,6 @@ dmypy.json
 # ttf file
 *.ttf
 
-# img file
-*.jpeg
-*.png
-*.jpg
 
 
 # pycharm

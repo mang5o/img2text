@@ -13,7 +13,6 @@ def text_compare(text_array, img_array, text_width, text_height, img_w, img_h):
     for y_grid in range(h_grid_cnt):
         tmp_x_line = []
         for x_grid in range(w_grid_cnt):
-            now_loss = 0.0
             tmp_grid = ov_array[y_grid * text_height: (y_grid + 1) * text_height,
                        x_grid * text_width: (x_grid + 1) * text_width]
             tmp_x_line.append(tmp_grid.sum())
