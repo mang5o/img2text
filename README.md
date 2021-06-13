@@ -50,15 +50,18 @@ You can make own preprocess like historgram equalization at **modules/cpu(gpu)/i
 
 #### ARRAYLIZATION
 Make image array
+![process1](https://raw.githubusercontent.com/mang5o/img2text/main/md_assets/process_1.png)  
+![process1](https://raw.githubusercontent.com/mang5o/img2text/main/md_assets/process_2.png)
+
 Make Text array
+![process1](https://raw.githubusercontent.com/mang5o/img2text/main/md_assets/process_3.png)
 #### COMPARISON
 After arraylization, code subtract image array from text array.
 And power output for calculate pixel difference.
 For all output array(after subtraction)'s grids, add values to derive the letter with the least pixel difference.
 #### OUTPUT
 example
-
-
+![process1](https://raw.githubusercontent.com/mang5o/img2text/main/md_assets/output_example.png)
 ## OUTPUT
 #### HOW TO SEE
 Output file will be placed in output/output
